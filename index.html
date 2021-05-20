@@ -96,11 +96,11 @@
     <div id = 'symptoms'>
         <h1>.Symptoms.</h1>
         <div id="box1">
-            <div class = 'head'> Most common symptoms
+            <div class = 'head'> <a href = "#symptoms" onclick="clicked1()">Most common symptoms</a>
                 <div class = 'targets' id = 't1'>
                 </div>
             </div>
-            <ul>
+            <ul id = 'b1'>
                 <li>Fever</li>
                 <li>Difficulty in breathing</li>
                 <li>Cough</li>
@@ -113,11 +113,11 @@
             </div>
         </div>
         <div id="box2">
-            <div class = 'head'>Less common symptoms
+            <div class = 'head'> <a href = "#symptoms" onclick="clicked2()">Less common symptoms</a>
                 <div class = 'targets' id = 't2'>
                 </div>
             </div>
-            <ul>
+            <ul id = "b2">
                 <li>Aches and pains.</li>
                 <li>Sore throat.</li>
                 <li>Diarrhoea.</li>
@@ -137,11 +137,11 @@
             </div>
         </div>
         <div id="box3">
-            <div class = 'head'>Serious Symptoms
+            <div class = 'head'> <a href = "#symptoms" onclick="clicked3()">Serious Symptoms</a>
                 <div class = 'targets' id = 't3'>
                 </div>
             </div>
-            <ul>
+            <ul id = "b3">
                 <li>Difficulty breathing or shortness of breath.</li>
                 <li>Chest pain or pressure.</li>
                 <li>Loss of speech or movement.</li>
@@ -233,5 +233,45 @@
         </div>
     </div>
 </body>
+<script>
+    function clicked1(){
+        pool(1)
+    }
+
+    function clicked2(){
+        pool(2)    
+    }
+    function clicked3(){
+        pool(3)
+    }
+    function pool(knows){
+        text1 = document.getElementById("b1")
+        text2 = document.getElementById("b2")
+        text3 = document.getElementById("b3")
+        let text = [text1.style,text2.style,text3.style]
+        pic1 = document.getElementById("pic1")
+        pic2 = document.getElementById("pic2")
+        pic3 = document.getElementById("pic3")
+        let pic = [pic1,pic2,pic3]
+        for (let i = 0; i <3; i++){
+            if (i+1 == knows){
+                pic[i].style.opacity = '1'
+                text[i].opacity = '1'
+            }
+            else{
+                text[i].opacity = '0'
+                pic[i].style.opacity = "0"
+            }
+        }
+
+        //Used below code for debugging...
+        // for (let j = 0 ; j < 3; j++){
+            // if (j+1 == knows){
+                // console.log(text[j])
+            // console.log(pic[j])
+            // }
+        // }
+    }
+</script>
 
 </html>
