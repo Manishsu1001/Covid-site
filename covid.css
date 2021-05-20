@@ -45,6 +45,7 @@ html{
     color: black;
     font-size: 18px;
     font-weight: bolder;
+    border: 0px;
     padding: 5px 10px 5px 10px;
 }
 #nav ul li a:hover{
@@ -251,8 +252,8 @@ html{
     text-align: center;
     text-decoration: underline;
 }
-#symptoms  div > .head{
-    color:black;
+#symptoms  div > .head > a{
+    color:rgb(255, 255, 255);
     font-size:18px;
     height: 60px;
     width: 200px;
@@ -267,7 +268,7 @@ html{
     background-color: rgb(241, 241, 241);
     height: 15px;
     width:50px;
-    margin: 10px auto;
+    margin: -20px auto;
 }
 #box1{
     position: absolute;
@@ -333,7 +334,7 @@ html{
     left: 300px;
     opacity:0;
 }
-#box1 > .head:hover,#box1 > .head.active{
+#box1 > .head:hover{
     color: rgb(114, 114, 114);
     text-shadow: 2px 2px 10px black;
 }
